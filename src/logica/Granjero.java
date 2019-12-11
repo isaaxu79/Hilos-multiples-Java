@@ -38,6 +38,7 @@ public class Granjero extends Observable implements Runnable{
                     Campo c = new Campo();
                     c.name="e";
                     c.pos= s.getPos();
+                    c.id=Integer.parseInt(name);
                     setChanged();
                     notifyObservers(c);
                     try {
@@ -56,6 +57,7 @@ public class Granjero extends Observable implements Runnable{
                     c.name="s";
                     c.cantidad=s.getCantidad();
                     c.pos= s.getPos();
+                    c.id=Integer.parseInt(name);
                     setChanged();
                     notifyObservers(c);
                     try {

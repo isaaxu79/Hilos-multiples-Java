@@ -10,10 +10,10 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="508.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="570.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.FXMLDocumentController">
     <children>
       <Rectangle fx:id="cielo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="191.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="922.0" />
-      <Rectangle fx:id="pasto" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="351.0" layoutX="-4.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" width="925.0" />
+      <Rectangle fx:id="pasto" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="409.0" layoutX="-4.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" width="925.0" />
         <Label fx:id="label" layoutX="393.0" layoutY="196.0" minHeight="16" minWidth="40.0" prefHeight="18.0" prefWidth="40.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -21,39 +21,40 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="75.0" layoutX="141.0" layoutY="245.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
       <Line endX="-52.907073974609375" endY="-56.307098388671875" layoutX="242.0" layoutY="245.0" startX="-100.0" />
       <Line endX="-138.19998168945312" endY="-58.014190673828125" layoutX="328.0" layoutY="246.0" startX="-100.0" />
-      <Rectangle fx:id="campo1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="82.0" layoutX="10.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
-      <Rectangle fx:id="campo2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="82.0" layoutX="106.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
-      <Rectangle fx:id="campo3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="82.0" layoutX="205.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
-      <Rectangle fx:id="campo4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="82.0" layoutX="306.0" layoutY="354.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
+      <Rectangle fx:id="campo1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="82.0" layoutX="10.0" layoutY="396.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
+      <Rectangle fx:id="campo2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="82.0" layoutX="106.0" layoutY="396.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#666869" height="200.0" layoutX="581.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="322.0" />
+      <Rectangle fx:id="campo3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="82.0" layoutX="205.0" layoutY="396.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
+      <Rectangle fx:id="campo4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="82.0" layoutX="306.0" layoutY="396.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
       <Ellipse fill="#c9c9c9" layoutX="351.0" layoutY="233.0" radiusX="24.0" radiusY="46.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c9c9c9" height="91.0" layoutX="326.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
-      <Button layoutX="325.0" layoutY="453.0" mnemonicParsing="false" onAction="#init" text="Iniciar" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e1e" height="39.0" layoutX="661.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e1e" height="39.0" layoutX="736.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="39.0" layoutX="661.0" layoutY="301.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="39.0" layoutX="751.0" layoutY="301.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="39.0" layoutX="815.0" layoutY="301.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-      <Label fx:id="tienda5" layoutX="769.0" layoutY="313.0" text="0" textFill="WHITE">
+      <Button layoutX="473.0" layoutY="523.0" mnemonicParsing="false" onAction="#init" text="Iniciar" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e1e" height="39.0" layoutX="661.0" layoutY="208.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e1e" height="39.0" layoutX="736.0" layoutY="208.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+      <ImageView fx:id="gente3" fitHeight="59.0" fitWidth="58.0" layoutX="609.0" layoutY="307.0">
+         <image>
+            <Image url="@../img/gente2.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#ff1f1f" height="39.0" layoutX="661.0" layoutY="301.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+      <ImageView fx:id="people4" fitHeight="59.0" fitWidth="58.0" layoutX="826.0" layoutY="307.0">
+         <image>
+            <Image url="@../img/gente.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="39.0" layoutX="751.0" layoutY="301.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="39.0" layoutX="815.0" layoutY="301.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+      <Label fx:id="tienda5" layoutX="714.0" layoutY="352.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="tienda4" layoutX="679.0" layoutY="314.0" text="0" textFill="WHITE">
+      <Label fx:id="tienda2" layoutX="708.0" layoutY="220.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="tienda1" layoutX="678.0" layoutY="220.0" text="0" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="tienda2" layoutX="752.0" layoutY="220.0" text="0" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="tienda3" layoutX="831.0" layoutY="313.0" text="0" textFill="WHITE">
+      <Label fx:id="tienda3" layoutX="904.0" layoutY="343.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -83,6 +84,61 @@
       <ImageView fitHeight="145.0" fitWidth="135.0" layoutX="258.0" layoutY="173.0">
          <image>
             <Image url="@../img/silo.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="g2" fitHeight="59.0" fitWidth="58.0" layoutX="7.0" layoutY="482.0">
+         <image>
+            <Image url="@../img/gr.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="g1" fitHeight="59.0" fitWidth="58.0" layoutX="312.0" layoutY="336.0">
+         <image>
+            <Image url="@../img/gr2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="88.0" layoutX="614.0" layoutY="339.0">
+         <image>
+            <Image url="@../img/pngocean.com.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="tienda4" layoutX="603.0" layoutY="351.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="59.0" fitWidth="88.0" layoutX="609.0" layoutY="216.0">
+         <image>
+            <Image url="@../img/pngocean.com.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="tienda1" layoutX="597.0" layoutY="223.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="59.0" fitWidth="88.0" layoutX="727.0" layoutY="341.0">
+         <image>
+            <Image url="@../img/pngocean.com.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="88.0" layoutX="820.0" layoutY="341.0">
+         <image>
+            <Image url="@../img/pngocean.com.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="88.0" layoutX="718.0" layoutY="211.0">
+         <image>
+            <Image url="@../img/pngocean.com.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="people" fitHeight="59.0" fitWidth="58.0" layoutX="783.0" layoutY="245.0">
+         <image>
+            <Image url="@../img/gente.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="gente2" fitHeight="59.0" fitWidth="58.0" layoutX="580.0" layoutY="245.0">
+         <image>
+            <Image url="@../img/gente2.png" />
          </image>
       </ImageView>
     </children>
