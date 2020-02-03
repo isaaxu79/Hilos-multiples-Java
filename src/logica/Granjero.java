@@ -8,6 +8,7 @@ package logica;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.logging.Level;
+import java.util.concurrent.Semaphore;
 import java.util.logging.Logger;
 
 /**
@@ -30,8 +31,10 @@ public class Granjero extends Observable implements Runnable{
     public void run() {         
         while(true){
             if(recolectar){
+                System.out.println("aqiopaso");
                 Response s = ent.sembrar();
                 recolectar=s.x;
+                System.out.println(s.x);
                 if(s.x){
                     float tiempo = (float)(Math.random()*1500)+2000;
                     System.out.println("sembrador "+name + " Estoy sembrando maiz");
@@ -49,6 +52,7 @@ public class Granjero extends Observable implements Runnable{
                 }
                 
             }else{
+                System.out.println("aqiopasosañ");
                 Response s = ent.recolectar();
                 recolectar=s.x;
                 if(!s.isX() || ent.camp==4){

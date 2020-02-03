@@ -30,7 +30,7 @@ public class Vendedor extends Observable implements Runnable {
     public void run() {
         while (true) {
             if(mercancia==0){
-                merca.abastecer();
+                boolean d = merca.abastecer();
                 Campo c = new Campo();
                 c.name = "extra";
                 mercancia = 50;
@@ -43,7 +43,9 @@ public class Vendedor extends Observable implements Runnable {
                     Logger.getLogger(Vendedor.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 setChanged();
-                notifyObservers(c);
+                if(d){
+                    notifyObservers(c);
+                }
             }else{
                 long val= (long)((Math.random()*2500)+3500);
                 try {

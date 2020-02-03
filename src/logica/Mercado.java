@@ -5,6 +5,7 @@
  */
 package logica;
 
+import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,34 +16,38 @@ import java.util.logging.Logger;
 public class Mercado {
     int almacen = 0;
     
-    public synchronized void depositarAlAlmacen(int valor){
-        int tal = almacen+valor;
-        while(almacen == 1000 || tal>1000 ){
-            try {
-                wait();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Mercado.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        
-        almacen+=valor;
-        notifyAll();
+    Semaphore ent, merc;
+    
+    public Mercado(Semaphore ent, Semaphore merc){
+        this.ent = ent;
+        this.merc = merc;
     }
     
-    public synchronized void abastecer(){
-        while(almacen<49){
-            try {
-                wait();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Mercado.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+    public void depositarAlAlmacen(int valor){
+        try {
+            merc.acquire();
+        } catch (Exception e) {}
+        int tal = almacen+valor;
+        
+        almacen+=valor;
+        merc.release();
+    }
+    
+    public boolean abastecer(){
+        boolean  x = false;
+        try {
+            merc.acquire();
+        } catch (Exception e) {}
         try {
             Thread.sleep(500);
         } catch (InterruptedException ex) {
             Logger.getLogger(Mercado.class.getName()).log(Level.SEVERE, null, ex);
         }
-        almacen-=50;
-        notifyAll();
+        if(almacen !=  0 && almacen > 50){
+            almacen-=50;
+            x=true;
+        }
+        merc.release();
+        return x;
     }
 }

@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.ResourceBundle;
+import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.TranslateTransition;  
@@ -64,15 +65,16 @@ public class FXMLDocumentController implements Initializable, Observer {
     
     TranslateTransition translate = new TranslateTransition();
     
+    Semaphore mutex = new Semaphore(2);
+    Semaphore mutex2 = new Semaphore(2);
+    
 
     Thread[] dar = new Thread[2];
-    Entorno entorno = new Entorno();
+    Entorno entorno = new Entorno(mutex);
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         fields();
-        //init();
-
     }
 
     public void fields() {
@@ -80,15 +82,15 @@ public class FXMLDocumentController implements Initializable, Observer {
         TranslateTransition tran1 = new TranslateTransition();
         TranslateTransition tran2 = new TranslateTransition();
         TranslateTransition tran3 = new TranslateTransition();
-        Image img = new Image("/img/t.jpg");
+        Image img = new Image("/img/pancito.jpg");
         campo1.setFill(new ImagePattern(img));
         campo2.setFill(new ImagePattern(img));
         campo3.setFill(new ImagePattern(img));
         campo4.setFill(new ImagePattern(img));
-        Image ix = new Image("/img/p.jpg");
-        pasto.setFill(new ImagePattern(ix));
-        Image i = new Image("/img/c.jpg");
-        cielo.setFill(new ImagePattern(i));
+        //Image ix = new Image("/img/p.jpg");
+        //pasto.setFill(new ImagePattern(ix));
+        //Image i = new Image("/img/c.jpg");
+        //cielo.setFill(new ImagePattern(i));
         tran.setByX(-200);
         tran.setDuration(Duration.millis(3000));
         tran.setCycleCount(2000);
@@ -116,7 +118,7 @@ public class FXMLDocumentController implements Initializable, Observer {
         Platform.runLater(()->{
             tran.play();
             tran1.play();
-            //tran2.play();
+            //translate.play();
             //tran3.play();
         });
     }
@@ -130,18 +132,20 @@ public class FXMLDocumentController implements Initializable, Observer {
                     insert(c.getPos(),c.getId());
                     break;
                 case "envio":
-                    Image im = new Image("/img/c.png");
-                    vendedor.setImage(im);
-                    translate.setByX(400);
-                    translate.setNode(vendedor);
-                    translate.play();
+//                    Image im = new Image("/img/c.png");
+//                    vendedor.setImage(im);
+//                    translate.setByX(400);
+//                    //translate.setDuration(Duration.millis(3000));
+//                    translate.setNode(vendedor);
+//                    translate.play();
                     break;
                 case "regreso":
-                    Image img = new Image("/img/cv.png");
-                    vendedor.setImage(img);
-                    translate.setByX(-400);
-                    translate.setNode(vendedor);
-                    translate.play();
+//                    Image img = new Image("/img/cv.png");
+//                    vendedor.setImage(img);
+//                    translate.setByX(-400);
+//                    translate.setNode(vendedor);
+//                    translate.play();
+//                    //translate.pause();
                     break;
                 case "alma":
                     almacen.setText(String.valueOf(c.getCantidad()));
@@ -151,7 +155,7 @@ public class FXMLDocumentController implements Initializable, Observer {
                     almacen.setText(String.valueOf(c.getPos()));
                     break;
                 case "vacia":
-                    System.out.println(c.getCantidad()+ "  " +c.getId());
+                    System.out.println(c.getCantidad()+ " - " +c.getId());
                     tiendas(c.getId()+1, c.getCantidad());
                     break;
                 default:
@@ -167,7 +171,7 @@ public class FXMLDocumentController implements Initializable, Observer {
             dar[i] = new Thread(new Granjero(String.valueOf(i), entorno, this));
             dar[i].start();
         }
-        Mercado merca = new Mercado();
+        Mercado merca = new Mercado(mutex, mutex2);
         Transportista tra = new Transportista("1",entorno,merca,this);
         Thread t = new Thread(tra);
         t.start();
@@ -179,7 +183,7 @@ public class FXMLDocumentController implements Initializable, Observer {
     }
 
     private void insert(int pos, int id) {
-        Image img = new Image("/img/g.jpg");
+        Image img = new Image("/img/panes.jpg");
         switch (pos) {
             case 1:
                 if(id==0){
@@ -235,7 +239,7 @@ public class FXMLDocumentController implements Initializable, Observer {
     }
 
     private void delet(int pos, int id) {
-        Image img = new Image("/img/t.jpg");
+        Image img = new Image("/img/pancito.jpg");
         switch (pos) {
             case 1:
                 if(id==0){
